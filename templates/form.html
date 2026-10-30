@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Post editor{% endblock %}
+
+{% block content %}
+<h1>Post editor</h1>
+
+<form method="post">
+  <p><label>Title <input name="title" value="{{ post.title }}"></label></p>
+  <p><textarea name="body" rows="15" cols="60">{{ post.body }}</textarea></p>
+  <button>Save</button>
+</form>
+{% endblock %}

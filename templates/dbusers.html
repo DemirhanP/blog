@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Users (temporary test page)</h1>
+<ul>
+  {% for u in users %}
+    <li>{{ u.id }}: {{ u.username }} (writer: {{ u.is_writer }})</li>
+  {% endfor %}
+</ul>
+{% endblock %}

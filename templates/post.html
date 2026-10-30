@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p>by {{ post.username }}, {{ post.created_at.strftime('%Y-%m-%d') }}</p>
+
+{% if session.user_id == post.author_id and session.is_writer %}
+  <p><a href="{{ url_for('edit_post', post_id=post.id) }}">Edit</a></p>
+{% endif %}
+
+<div>{{ post.body }}</div>
+{% endblock %}
